@@ -137,7 +137,6 @@ int main()
 
         // Solve case
         llint caseRes = evaluate(0, uHotsp, 0, uPattern, dp);
-        cout << caseRes << '\n';
         total += caseRes;
     }
     fin.close();
