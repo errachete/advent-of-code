@@ -52,7 +52,7 @@ void moveCell(const vector<vector<char>> & map, pair<int,int> & pos, dir & from)
 
 int main()
 {
-    ifstream fin("test.txt");
+    ifstream fin("input.txt");
     string line;
     vector<vector<char>> map;
     pair<int,int> s_coords;
