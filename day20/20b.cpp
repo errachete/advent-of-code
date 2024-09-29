@@ -8,6 +8,7 @@
 #include <queue>
 
 using namespace std;
+using llint = long long int;
 
 enum Pulse {none, high, low};
 
@@ -72,6 +73,13 @@ class Conjunction
     }
 };
 
+llint gcd(llint a, llint b)
+{
+    if (b == 0)
+        return a;
+    else
+        return gcd(b, a % b);
+}
 
 int main()
 {
@@ -121,8 +129,8 @@ int main()
     // Examining input data, rx receives signal from dt, and dt is a conjunction of ks, pm, vk and dl
     // So, for dt to send a low to rx, we need for ks, pm, vk and dl to be high at the same time
     // After examining the process, they are high just once after several button presses
-    // Lets compute the needed number of button presses for each, and then the product
-    unsigned long long int buttonPress = 0, ks = 0, pm = 0, vk = 0, dl = 0;
+    // Lets compute the needed number of button presses for each, and then the lcm
+    llint buttonPress = 0, ks = 0, pm = 0, vk = 0, dl = 0;
     while ((ks * pm * vk * dl) == 0) // Any == 0
     {
         ++buttonPress;
@@ -169,6 +177,10 @@ int main()
         }
     }
 
-    cout << "Answer: " << ks * pm * vk * dl << endl;
+    llint lcm = ks * pm / gcd(ks,pm);
+    lcm = lcm * vk / gcd(lcm,vk);
+    lcm = lcm * dl / gcd(lcm,dl);
+
+    cout << "Answer: " << lcm << endl;
     return 0;
 }
