@@ -184,6 +184,7 @@ int main()
         system[w.getName()] = w;
         getline(fin, line);
     }
+    fin.close();
 
     llint acc = 0, rej = 0;
     queue<pair<string,PartSet>> pending;

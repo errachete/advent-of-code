@@ -134,6 +134,7 @@ int main()
 
         if (res == "A") total += p.sum();
     }
+    fin.close();
 
     cout << "Answer: " << total << endl;
     return 0;
