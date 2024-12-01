@@ -1,0 +1,26 @@
+{
+    "name": "adv-of-code",
+
+    "build": {
+        "context": "..",
+        "dockerfile": "./Dockerfile"
+    },
+    "overrideCommand": false,
+    "runArgs": ["--rm", "--name", "adv-of-code"],
+
+    "customizations":{
+        "vscode": {
+            "extensions": [
+                "mechatroner.rainbow-csv",
+                "mutantdino.resourcemonitor",
+                "ms-vscode.cpptools-extension-pack"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    },
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/appuser/workspace,type=bind",
+	"workspaceFolder": "/home/appuser/workspace"
+}
