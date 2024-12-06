@@ -32,4 +32,6 @@ int main()
         total += abs(list1[i] - list2[i]);
 
     cout << "Result: " << total << endl;
+
+    return 0;
 }

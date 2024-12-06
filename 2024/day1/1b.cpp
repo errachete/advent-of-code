@@ -36,4 +36,6 @@ int main()
             total += a.first * counts2[a.first] * a.second;
 
     cout << "Result: " << total << endl;
+
+    return 0;
 }
