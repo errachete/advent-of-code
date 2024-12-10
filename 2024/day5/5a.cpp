@@ -44,13 +44,13 @@ int main()
         seq.push_back(num);
 
         bool correct = true;
-        for (int i = 0; i < seq.size() && correct; ++i)
+        for (int i = 0; i < seq.size()-1 && correct; ++i)
         {
-            for (int j = i+1; j < seq.size() && correct; ++j)
-            {
-                if (!rules[seq[i]].count(seq[j]) && rules[seq[j]].count(seq[i]))
-                    correct = false;
-            }
+            // It is enough to check consecutive numbers, because all numbers
+            // in the sequence are in the rules, and thus, there is only one
+            // correct way to order them concatenating rules
+            if (!rules[seq[i]].count(seq[i+1]))
+                correct = false;
         }
         if (correct)
             total += seq[seq.size()/2];
