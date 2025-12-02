@@ -13,7 +13,8 @@
             "extensions": [
                 "mechatroner.rainbow-csv",
                 "mutantdino.resourcemonitor",
-                "ms-vscode.cpptools-extension-pack"
+                "ms-vscode.cpptools-extension-pack",
+                "github.copilot"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash"
