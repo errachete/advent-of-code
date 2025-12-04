@@ -26,7 +26,7 @@ int main()
         }
         result += stoll(best);
     }
-
+    fin.close();
 
     cout << "Result: " << result << '\n';
     return 0;

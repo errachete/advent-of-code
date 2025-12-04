@@ -26,7 +26,7 @@ int main()
         }
         result += stoi(string("") + max + next);
     }
-
+    fin.close();
 
     cout << "Result: " << result << '\n';
     return 0;
